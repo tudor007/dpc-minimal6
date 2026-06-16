@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SimpleDPC"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device Policy Controller — GMS-Free"
+            android:textSize="13sp"
+            android:textColor="#555"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Status Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="STATUS"
+                android:textSize="11sp"
+                android:textColor="#888"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Checking..."
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:textColor="#222"/>
+        </LinearLayout>
+
+        <!-- Quick Actions Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="QUICK ACTIONS"
+                android:textSize="11sp"
+                android:textColor="#888"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnLock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Lock Screen"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#1A237E"/>
+
+                <Button
+                    android:id="@+id/btnWipe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Factory Wipe"
+                    android:backgroundTint="#B71C1C"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Password Policy Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PASSWORD POLICY"
+                android:textSize="11sp"
+                android:textColor="#888"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvPasswordLength"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Min password length: 4"
+                android:textSize="14sp"
+                android:textColor="#222"/>
+
+            <SeekBar
+                android:id="@+id/sbPasswordLength"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="12"
+                android:progress="2"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- Screen Timeout Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SCREEN TIMEOUT"
+                android:textSize="11sp"
+                android:textColor="#888"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvTimeout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Screen timeout: 1 min"
+                android:textSize="14sp"
+                android:textColor="#222"/>
+
+            <SeekBar
+                android:id="@+id/sbTimeout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:progress="1"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- Restrictions Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DEVICE RESTRICTIONS"
+                android:textSize="11sp"
+                android:textColor="#888"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="8dp"/>
+
+            <CheckBox
+                android:id="@+id/cbCamera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Disable Camera"
+                android:textSize="14sp"/>
+
+            <CheckBox
+                android:id="@+id/cbFactoryReset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Block Factory Reset (Device Owner only)"
+                android:textSize="14sp"/>
+
+            <CheckBox
+                android:id="@+id/cbUsb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Block USB File Transfer (Device Owner only)"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- Instructions Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E8EAF6"
+            android:padding="12dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HOW TO ACTIVATE"
+                android:textSize="11sp"
+                android:textColor="#3949AB"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Install APK (adb install SimpleDPC.apk)\n2. Set Device Owner:\n\nadb shell dpm set-device-owner com.simpledpc/.AdminReceiver\n\n3. Reopen the app — controls will unlock."
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:textColor="#1A237E"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

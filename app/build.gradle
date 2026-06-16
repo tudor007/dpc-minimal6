@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.simpledpc'
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.simpledpc"
+        minSdk 26          // Android 8.0 minimum; device owner works cleanly here
+        targetSdk 31       // Android 12
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            // No ProGuard/R8 shrinking for simplicity
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    // No Google Play Services or Firebase — pure AOSP only
+}
+
+dependencies {
+    // Zero Google dependencies — only AndroidX core (AOSP-derived, no GMS required)
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+}
